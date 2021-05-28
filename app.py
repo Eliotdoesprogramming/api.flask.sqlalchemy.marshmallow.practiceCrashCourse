@@ -5,8 +5,15 @@ from flask_marshmallow import Marshmallow
 import os
 import sys
 
-
 # from .models.product import Product, ProductSchema
+
+#python3 -m virtualenv venv to make the virtual environment
+#http://witkowskibartosz.com/blog/pipenv_run_vs_pipenv_shell.html
+
+#to run from virtual environemnt use:
+#venv/bin/pipenv run python app.py
+
+#
 
 
 
