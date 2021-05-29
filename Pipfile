@@ -13,3 +13,6 @@ marshmallow-sqlalchemy = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+start="python3 app/app.py"

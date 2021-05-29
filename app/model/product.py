@@ -1,14 +1,14 @@
+#Product class/model
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
+db = SQLAlchemy()
 
-
-#Product class/model
-class Product(SQLAlchemy.Model):
-    id = SQLAlchemy.Column(SQLAlchemy.Integer, primary_key=True)
-    name = SQLAlchemy.Column(SQLAlchemy.String(100), unique=True)
-    description = SQLAlchemy.Column(SQLAlchemy.String(200))
-    price = SQLAlchemy.Column(SQLAlchemy.Float)
-    qty = SQLAlchemy.Column(SQLAlchemy.Integer)
+class Product(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), unique=True)
+    description = db.Column(db.String(200))
+    price = db.Column(db.Float)
+    qty = db.Column(db.Integer)
 
     def __init__(self,name,description,price,qty) -> None:
         self.name=name
@@ -17,7 +17,8 @@ class Product(SQLAlchemy.Model):
         self.qty=qty
 
 
-#Product ScheMarshmallow
-class ProductSchema(Marshmallow.Schema):
+#Product Schema
+ma = Marshmallow(db)
+class ProductSchema(ma.Schema):
     class Meta:
         fields = ('id','name','description','price','qty')
